@@ -1,6 +1,6 @@
 # Noblewear
 
-Noblewear is a web application created using ReactJS, NodeJS, ExpressJS, and MySQL under Docker virtual environtment.
+Noblewear is a web application created using ReactJS, NodeJS, ExpressJS, and MySQL under Docker virtual environment.
 
 ## Docker Setup
 
