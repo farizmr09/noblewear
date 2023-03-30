@@ -18,6 +18,7 @@ services:
     ports:
       - 5000:5000
     command: nodemon index
+    # npx prisma generate first (unsolved problem)
 
   mysql:
     image: mysql/mysql-server
@@ -27,8 +28,8 @@ services:
     volumes:
       - /var/lib/mysql
     environment:
-      - MYSQL_USERNAME:root
-      - MYSQL_ROOT_PASSWORD=unsecurepasswd
+      - MYSQL_USERNAME=root
+      - MYSQL_ROOT_PASSWORD=123
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin

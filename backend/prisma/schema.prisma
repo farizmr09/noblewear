@@ -1,0 +1,112 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model ORDER_DATA {
+  ORDER_ID           Int           @id @default(autoincrement())
+  ORDER_DATE         DateTime      @db.DateTime(0)
+  TRANSACTION_STATUS String        @db.VarChar(255)
+  TOTAL_PRICE        Decimal       @db.Decimal(10, 2)
+  USER_ID            Int?
+  PAYMENT_ID         Int?
+  USER_DATA          USER_DATA?    @relation(fields: [USER_ID], references: [USER_ID], onDelete: NoAction, onUpdate: NoAction, map: "ORDER_DATA_ibfk_1")
+  USER_PAYMENT       USER_PAYMENT? @relation(fields: [PAYMENT_ID], references: [PAYMENT_ID], onDelete: NoAction, onUpdate: NoAction, map: "ORDER_DATA_ibfk_2")
+
+  @@index([PAYMENT_ID], map: "PAYMENT_ID")
+  @@index([USER_ID], map: "USER_ID")
+}
+
+model ORDER_DETAILS {
+  ORDER_ID     Int           @id @default(autoincrement())
+  QUANTITY     Int
+  PRODUCT_ID   Int?
+  SHIPPER_ID   Int?
+  PRODUCT_DATA PRODUCT_DATA? @relation(fields: [PRODUCT_ID], references: [PRODUCT_ID], onDelete: NoAction, onUpdate: NoAction, map: "ORDER_DETAILS_ibfk_1")
+  SHIPPER_DATA SHIPPER_DATA? @relation(fields: [SHIPPER_ID], references: [SHIPPER_ID], onDelete: NoAction, onUpdate: NoAction, map: "ORDER_DETAILS_ibfk_2")
+
+  @@index([PRODUCT_ID], map: "PRODUCT_ID")
+  @@index([SHIPPER_ID], map: "SHIPPER_ID")
+}
+
+model PRODUCT_DATA {
+  PRODUCT_ID    Int             @id @default(autoincrement())
+  SKU           String          @db.VarChar(255)
+  STOCK         Int?
+  BRAND         String          @db.VarChar(255)
+  SIZE          String          @db.VarChar(255)
+  DISCOUNT      Decimal?        @db.Decimal(5, 2)
+  WEIGHT        Decimal         @db.Decimal(10, 2)
+  PRICE         Decimal         @db.Decimal(10, 2)
+  COLOR         String?         @db.VarChar(255)
+  ORDER_DETAILS ORDER_DETAILS[]
+  SHOPPING_CART SHOPPING_CART[]
+}
+
+model SHIPPER_DATA {
+  SHIPPER_ID       Int             @id @default(autoincrement())
+  SHIPPING_COMPANY String          @db.VarChar(255)
+  SERVICE_TYPE     String          @db.VarChar(255)
+  ORDER_DETAILS    ORDER_DETAILS[]
+}
+
+model SHOPPING_CART {
+  USER_ID      Int
+  PRODUCT_ID   Int
+  QUANTITY     Int          @default(1)
+  SIZE         String?      @db.VarChar(255)
+  COLOR        String?      @db.VarChar(255)
+  USER_DATA    USER_DATA    @relation(fields: [USER_ID], references: [USER_ID], onDelete: NoAction, onUpdate: NoAction, map: "SHOPPING_CART_ibfk_1")
+  PRODUCT_DATA PRODUCT_DATA @relation(fields: [PRODUCT_ID], references: [PRODUCT_ID], onDelete: NoAction, onUpdate: NoAction, map: "SHOPPING_CART_ibfk_2")
+
+  @@id([USER_ID, PRODUCT_ID])
+  @@index([PRODUCT_ID], map: "PRODUCT_ID")
+}
+
+model USER_ADDRESS {
+  USER_ID     Int       @id
+  ADDRESS     String    @db.VarChar(255)
+  PROVINCE    String    @db.VarChar(255)
+  CITY        String    @db.VarChar(255)
+  POSTAL_CODE String    @db.VarChar(10)
+  COUNTRY     String    @db.VarChar(255)
+  USER_DATA   USER_DATA @relation(fields: [USER_ID], references: [USER_ID], onDelete: NoAction, onUpdate: NoAction, map: "USER_ADDRESS_ibfk_1")
+}
+
+model USER_DATA {
+  USER_ID       Int               @id @default(autoincrement())
+  USERNAME      String            @db.VarChar(255)
+  PASSWORD      String            @db.VarChar(255)
+  FIRST_NAME    String            @db.VarChar(255)
+  LAST_NAME     String            @db.VarChar(255)
+  EMAIL         String            @db.VarChar(255)
+  GENDER        USER_DATA_GENDER?
+  PHONE_NUMBER  String            @db.VarChar(20)
+  CREATED_AT    DateTime          @db.DateTime(0)
+  ORDER_DATA    ORDER_DATA[]
+  SHOPPING_CART SHOPPING_CART[]
+  USER_ADDRESS  USER_ADDRESS?
+  USER_PAYMENT  USER_PAYMENT[]
+}
+
+model USER_PAYMENT {
+  PAYMENT_ID     Int          @id @default(autoincrement())
+  USER_ID        Int?
+  PAYMENT_TYPE   String       @db.VarChar(255)
+  ACCOUNT_NUMBER String       @db.VarChar(255)
+  EXPIRY_DATE    String       @db.VarChar(5)
+  ORDER_DATA     ORDER_DATA[]
+  USER_DATA      USER_DATA?   @relation(fields: [USER_ID], references: [USER_ID], onDelete: NoAction, onUpdate: NoAction, map: "USER_PAYMENT_ibfk_1")
+
+  @@index([USER_ID], map: "USER_ID")
+}
+
+enum USER_DATA_GENDER {
+  Male
+  Female
+  Other
+}
