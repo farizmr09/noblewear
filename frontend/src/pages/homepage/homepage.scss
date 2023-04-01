@@ -1,0 +1,196 @@
+.homepage_wrapper_banner {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   &::before {
+      content: "";
+      background-color: #67695e;
+      position: absolute;
+      width: 49.4%;
+      height: 100%;
+      z-index: -1;
+   }
+
+   &::after {
+      content: "";
+      background-color: #dadada;
+      position: absolute;
+      left: 49.4%;
+      width: 50.6%;
+      height: 100%;
+      z-index: -1;
+   }
+
+   &_content {
+      padding-inline: 150px;
+      position: relative;
+      margin-top: 150px;
+      padding-bottom: 142px;
+      overflow: hidden;
+      &_header {
+         display: flex;
+         justify-content: center;
+
+         h1 {
+            font-family: Brand, "sans-serif";
+            font-size: 213px;
+            text-transform: lowercase;
+            font-weight: 400;
+
+            .left {
+               color: #f3f3f3;
+            }
+            .right {
+               color: #989898;
+            }
+         }
+      }
+
+      &_img {
+         height: 100%;
+         position: absolute;
+         bottom: -10px;
+         left: 50%;
+         transform: translateX(-50%);
+
+         img {
+            height: 100%;
+         }
+      }
+
+      &_desc {
+         display: flex;
+         justify-content: space-between;
+
+         &_leftcol {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+
+            .desc_1 {
+               color: #f3f3f3;
+               font-size: 21px;
+               font-family: Inter, "sans-serif";
+               font-weight: 400;
+            }
+            .desc_2 {
+               color: #f3f3f3;
+               font-size: 21px;
+               margin-top: 10px;
+               font-family: Inter, "sans-serif";
+               font-weight: 600;
+            }
+
+            .btn {
+               margin-top: 34px;
+               padding: 8px 31px;
+               border: 2px #f3f3f3 solid;
+               margin-right: auto;
+               color: #f3f3f3;
+               transition: 0.3s ease-in-out all;
+
+               &:hover {
+                  color: #67695e;
+                  background-color: #f3f3f3;
+               }
+            }
+         }
+
+         &_rightcol {
+            width: 35%;
+            display: flex;
+            justify-content: flex-end;
+
+            ul {
+               li {
+                  font-family: Inter, "sans-serif";
+                  text-align: end;
+                  list-style: none;
+                  font-weight: 400;
+                  transition: 0.1s ease-in-out font-weight;
+
+                  &:not(:last-child) {
+                     margin-bottom: 5px;
+                  }
+
+                  &:hover {
+                     font-weight: 600;
+                  }
+
+                  a {
+                     &::after {
+                        content: "\2022";
+                        color: #989898;
+                        font-weight: bold;
+                        display: inline-block;
+                        width: 1em;
+                        margin-left: 1px;
+                     }
+                     color: #989898;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+.homepage_wrapper_bestseller {
+   background: url("../../assets/images/bestseller_bg.webp");
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   padding: 55px 150px;
+   &_head {
+      display: flex;
+      &_leftcol {
+         width: 50%;
+         h3 {
+            color: #ffffff;
+            font-size: 35px;
+            font-weight: 700;
+            line-height: 40.5px;
+         }
+         h2 {
+            color: #929292;
+            font-size: 76px;
+            font-weight: 700;
+            line-height: 64.6px;
+         }
+
+         p {
+            margin-top: 20px;
+            font-family: "Antipasto-regular", "sans-serif";
+            color: white;
+            font-size: 24px;
+         }
+      }
+      &_rightcol {
+         width: 50%;
+         display: flex;
+         justify-content: flex-end;
+
+         &::after {
+            content: url("../../assets//svg/arrow-topright.svg");
+            width: 15px;
+            margin-left: 10px;
+         }
+
+         a {
+            font-family: "Antipasto-regular", "sans-serif";
+            margin-bottom: auto;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 21px;
+            color: white;
+            border-bottom: 1px transparent solid;
+            transition: 0.3s ease-in-out all;
+
+            &:hover {
+               border-bottom: 1px white solid;
+            }
+         }
+      }
+   }
+}
