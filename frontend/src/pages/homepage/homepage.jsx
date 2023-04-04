@@ -1,7 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import HeaderHomepage from "../../layout/header_homepage/header_homepage";
 import "./homepage.scss";
+
+import HeaderHomepage from "../../layout/header_homepage/header_homepage";
+import BestSellerSlider from "../../components/BestSellerslider/BestSellerSlider";
 
 // Image Import
 import HomepageBannerImg from "../../assets/images/homepage_img.webp";
@@ -69,6 +71,9 @@ const homepage = () => {
                <div className='homepage_wrapper_bestseller_head_rightcol'>
                   <NavLink className='btn'>Discover More</NavLink>
                </div>
+            </div>
+            <div className='homepage_wrapper_bestseller_slider'>
+               <BestSellerSlider />
             </div>
          </div>
       </>

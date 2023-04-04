@@ -141,6 +141,10 @@
    background-size: cover;
    background-repeat: no-repeat;
    padding: 55px 150px;
+
+   display: flex;
+   flex-direction: column;
+   row-gap: 40px;
    &_head {
       display: flex;
       &_leftcol {
@@ -192,5 +196,7 @@
             }
          }
       }
+   }
+   &_slider {
    }
 }
