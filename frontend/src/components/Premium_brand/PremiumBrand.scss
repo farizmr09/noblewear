@@ -1,0 +1,122 @@
+.homepage_brand_wrapper_top {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+        background-color: white;
+        flex-basis: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 300px;
+        height: 50px;
+        padding-inline: 10px;
+        padding-block: 40px;
+        transition: 0.3s ease-in-out color;
+        &:hover{
+            background-color: #E0E0E0;
+            transition: 0.3s ease-in-out;
+            &:hover{
+                width: 160px;
+            }
+        }
+    }
+
+    &_image {
+        margin-inline: 30px;
+
+        &_logo {
+            width: 150px;
+            transition: 0.3s ease-in-out;
+            &:hover{
+                width: 160px;
+            }
+        }
+    }
+}
+
+.homepage_brand_wrapper_middle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &_gucci {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 575px;
+        height: 340px;
+        margin-block: 20px;
+        transition: 0.3s ease-in-out color;
+        &:hover{
+            background-color: #E0E0E0;
+        }
+        &_image {
+            margin-inline: 112px;
+
+            &_logo {
+                width: 350px;
+                transition: 0.3s ease-in-out;
+                &:hover{
+                    width: 360px;
+                }
+            }
+        }
+    }
+
+    &_right {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 275px;
+        height: 100px;
+        padding-block: 30px;
+        margin-block: 20px;
+        transition: 0.3s ease-in-out color;
+        &:hover{
+            background-color: #E0E0E0;
+        }
+        &_image {
+            &_logo {
+                width: 150px;
+                transition: 0.3s ease-in-out;
+                &:hover{
+                    width: 160px;
+                }
+            }
+        }
+    }
+}
+
+.homepage_brand_wrapper_bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    a {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 275px;
+        height: 100px;
+        padding-block: 30px;
+        transition: 0.3s ease-in-out color;
+        &:hover{
+            background-color: #E0E0E0;
+        }
+    }
+
+    &_image {
+        &_logo {
+            width: 150px;
+            transition: 0.3s ease-in-out;
+            &:hover{
+                width: 160px;
+            }
+        }
+    }
+}

@@ -38,9 +38,13 @@
             font-weight: 400;
 
             .left {
+               position: relative;
+               left: -50px;
                color: #f3f3f3;
             }
             .right {
+               position: relative;
+               left: -30px;
                color: #989898;
             }
          }
@@ -49,7 +53,7 @@
       &_img {
          height: 100%;
          position: absolute;
-         bottom: -10px;
+         bottom: -15px;
          left: 50%;
          transform: translateX(-50%);
 
@@ -70,14 +74,14 @@
             .desc_1 {
                color: #f3f3f3;
                font-size: 21px;
-               font-family: Inter, "sans-serif";
+               font-family: "Antipasto-regular", "sans-serif";
                font-weight: 400;
             }
             .desc_2 {
                color: #f3f3f3;
                font-size: 21px;
                margin-top: 10px;
-               font-family: Inter, "sans-serif";
+               font-family: "Inter", "sans-serif";
                font-weight: 600;
             }
 
@@ -103,7 +107,8 @@
 
             ul {
                li {
-                  font-family: Inter, "sans-serif";
+                  font-family: "Antipasto-regular", "sans-serif";
+                  font-size: 21px;
                   text-align: end;
                   list-style: none;
                   font-weight: 400;
@@ -199,4 +204,41 @@
    }
    &_slider {
    }
+}
+
+.homepage_wrapper_premium {
+   background: url("../../assets/images/premiumbrand_bg.webp");
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   padding: 55px 150px;
+
+   display: flex;
+   flex-direction: column;
+
+   &_head {
+      text-align: right;
+      margin-bottom: 60px;
+      h3 {
+         color: #EFEFEF;
+         font-size: 35px;
+         font-weight: 700;
+         line-height: 40.5px;
+      }
+      h2 {
+         color: #D6CEC0;
+         font-size: 76px;
+         font-weight: 700;
+         line-height: 64.6px;
+      }
+
+      p {
+         margin-top: 20px;
+         font-family: "Antipasto-regular", "sans-serif";
+         color: white;
+         font-size: 24px;
+         padding-left: 25%;
+      }
+   }
+   
 }
