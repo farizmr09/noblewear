@@ -8,7 +8,7 @@ export const getProducts = async (
   res: express.Response
 ): Promise<void> => {
   try {
-    const response = await prisma.pRODUCT_DATA.findMany();
+    const response = await prisma.PRODUCT_DATA.findMany();
     res.status(200).json(response);
   } catch (error: any) {
     res.status(500).json({ msg: error.message });
@@ -20,12 +20,23 @@ export const getProductsByName = async (
   res: express.Response
 ): Promise<void> => {
   const pattern: string = req.query.pattern as string;
+  const max: number = parseInt(req.query.max as string);
+  const min: number = parseInt(req.query.min as string);
+  const size: string = req.query.size as string;
+  const color: string = req.query.color as string;
   try {
-    const response = await prisma.pRODUCT_DATA.findMany({
+    const response = await prisma.PRODUCT_DATA.findMany({
       where: {
         BRAND: {
           contains: pattern,
         },
+        PRICE: {
+          lte: !isNaN(max) ? max : undefined,
+          gte: !isNaN(min) ? min : undefined,
+        },
+        SIZE: size,
+        COLOR: color,
+        // pagination
       },
     });
     res.status(200).json(response);

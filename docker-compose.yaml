@@ -18,6 +18,7 @@ services:
     ports:
       - 5000:5000
     command: nodemon index
+    # command: npx prisma generate
     # npx prisma generate first (unsolved problem)
 
   mysql:

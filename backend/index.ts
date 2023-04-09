@@ -2,6 +2,7 @@ import express, { Express } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import ProductRoute from "./routes/ProductRoute";
+import AuthRoute from "./routes/AuthRoute";
 import bodyParser from "body-parser";
 dotenv.config();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(ProductRoute);
+app.use(AuthRoute);
 
 app.listen(process.env.APP_PORT, () => {
   console.log("SERVER UP AND RUNNING");
