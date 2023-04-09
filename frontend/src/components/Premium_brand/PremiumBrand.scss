@@ -1,122 +1,113 @@
-.homepage_brand_wrapper_top {
-    flex-direction: row;
-    display: flex;
-    justify-content: space-between;
+.premiumbrand_wrapper {
+   &_top {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+      article {
+         display: flex;
+         align-content: center;
+         background: white;
+         position: relative;
+         grid-column: span 2;
 
-    a {
-        background-color: white;
-        flex-basis: 30%;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 300px;
-        height: 50px;
-        padding-inline: 10px;
-        padding-block: 40px;
-        transition: 0.3s ease-in-out color;
-        &:hover{
-            background-color: #E0E0E0;
-            transition: 0.3s ease-in-out;
-            &:hover{
-                width: 160px;
+         a {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            width: 100%;
+            padding-block: 46px;
+
+            img {
+               margin: auto;
+               width: 50%;
+               transition: 0.4s ease-in all;
             }
-        }
-    }
+         }
 
-    &_image {
-        margin-inline: 30px;
+         &:hover img {
+            transform: scale(1.05);
+         }
 
-        &_logo {
-            width: 150px;
-            transition: 0.3s ease-in-out;
-            &:hover{
-                width: 160px;
+         &.hermes {
+         }
+
+         &.dior {
+            img {
+               width: 35%;
             }
-        }
-    }
-}
+         }
+      }
+   }
+   &_grid {
+      width: 100%;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-column-gap: 16px;
+      grid-row-gap: 16px;
 
-.homepage_brand_wrapper_middle {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+      article {
+         display: flex;
+         align-content: center;
+         background: white;
+         position: relative;
 
-    &_gucci {
-        background-color: white;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 575px;
-        height: 340px;
-        margin-block: 20px;
-        transition: 0.3s ease-in-out color;
-        &:hover{
-            background-color: #E0E0E0;
-        }
-        &_image {
-            margin-inline: 112px;
+         a {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            width: 100%;
+            padding-block: 46px;
 
-            &_logo {
-                width: 350px;
-                transition: 0.3s ease-in-out;
-                &:hover{
-                    width: 360px;
-                }
+            img {
+               margin: auto;
+               width: 50%;
+               transition: 0.4s ease-in all;
             }
-        }
-    }
+         }
 
-    &_right {
-        background-color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 275px;
-        height: 100px;
-        padding-block: 30px;
-        margin-block: 20px;
-        transition: 0.3s ease-in-out color;
-        &:hover{
-            background-color: #E0E0E0;
-        }
-        &_image {
-            &_logo {
-                width: 150px;
-                transition: 0.3s ease-in-out;
-                &:hover{
-                    width: 160px;
-                }
-            }
-        }
-    }
-}
+         &:hover img {
+            transform: scale(1.05);
+         }
+         &.gucci {
+            grid-column: span 4;
+            grid-row: span 2;
+         }
 
-.homepage_brand_wrapper_bottom {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
-    a {
-        background-color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 275px;
-        height: 100px;
-        padding-block: 30px;
-        transition: 0.3s ease-in-out color;
-        &:hover{
-            background-color: #E0E0E0;
-        }
-    }
+         &.prada {
+            grid-column: span 2;
+         }
 
-    &_image {
-        &_logo {
-            width: 150px;
-            transition: 0.3s ease-in-out;
-            &:hover{
-                width: 160px;
-            }
-        }
-    }
+         &.lv {
+            grid-column: span 2;
+         }
+
+         &.bv {
+            grid-column: span 2;
+         }
+
+         &.marc_jacobs {
+            grid-column: span 2;
+         }
+
+         &.bulgary {
+            grid-column: span 2;
+         }
+
+         &.versace {
+            grid-column: span 2;
+         }
+
+         &.saint_laurent {
+            grid-column: span 2;
+         }
+
+         &.givenchy {
+            grid-column: span 2;
+         }
+      }
+   }
 }

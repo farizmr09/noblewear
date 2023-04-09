@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from 'react-router-dom'
 import "./PremiumBrand.scss";
 
 // Import Image
@@ -17,83 +18,31 @@ import saint_laurent from "../../assets/images/brand/saint_laurent.webp"
 import versace from "../../assets/images/brand/versace.webp"
 
 
-const homepage_card = () => {
+const PremiumBrandGrid = () => {
    return (
       <>
-         <div className="homepage_brand_wrapper_top">
-            <a href=''>
-               <div className='homepage_brand_wrapper_top_image'>
-                  <img className="homepage_brand_wrapper_top_image_logo" src={hermes} alt='' />
-               </div>
-            </a>
-            <a href=''>
-               <div className='homepage_brand_wrapper_image'>
-                  <img className="homepage_brand_wrapper_top_image_logo" src={chanel} alt='' />
-               </div>
-            </a>
-            <a href=''>
-               <div className='homepage_brand_wrapper_image'>
-                  <img className="homepage_brand_wrapper_top_image_logo" src={dior} alt='' />
-               </div>
-            </a>
-         </div>
-
-         <div className="homepage_brand_wrapper_middle">
-            <a className="homepage_brand_wrapper_middle_gucci" href="">
-               <div className="homepage_brand_wrapper_middle_gucci_image">
-                  <img className="homepage_brand_wrapper_middle_gucci_image_logo" src={gucci} alt="" />
-               </div>
-            </a>
-            <div>
-               <a className="homepage_brand_wrapper_middle_right">
-                  <div className="homepage_brand_wrapper_middle_right_image">
-                     <img className="homepage_brand_wrapper_middle_right_image_logo" src={prada} alt='' />
-                  </div>
-               </a>
-               <a className="homepage_brand_wrapper_middle_right">
-                  <div className="homepage_brand_wrapper_middle_right_image">
-                     <img className="homepage_brand_wrapper_middle_right_image_logo" src={bv} alt='' />
-                  </div>
-               </a>
+         <div className="premiumbrand_wrapper">
+            <div className="premiumbrand_wrapper_top">
+               <article className="hermes"><NavLink><img src={hermes} alt="" /></NavLink></article>
+               <article className="chanel"><NavLink><img src={chanel} alt="" /></NavLink></article>
+               <article className="dior"><NavLink><img src={dior} alt="" /></NavLink></article>
             </div>
-            <div>
-               <a className="homepage_brand_wrapper_middle_right">
-                  <div className="homepage_brand_wrapper_middle_right_image">
-                     <img className="homepage_brand_wrapper_middle_right_image_logo" src={marc_jacobs} alt='' />
-                  </div>
-               </a>
-               <a className="homepage_brand_wrapper_middle_right">
-                  <div className="homepage_brand_wrapper_middle_right_image">
-                     <img className="homepage_brand_wrapper_middle_right_image_logo" src={lv} alt='' />
-                  </div>
-               </a>
-            </div>
-         </div>
 
-         <div className="homepage_brand_wrapper_bottom">
-            <a>
-               <div className="homepage_brand_wrapper_bottom_image">
-                  <img className="homepage_brand_wrapper_bottom_image_logo" src={bvlgari} alt='' />
-               </div>
-            </a>
-            <a>
-               <div className="homepage_brand_wrapper_bottom_image">
-                  <img className="homepage_brand_wrapper_bottom_image_logo" src={versace} alt='' />
-               </div>
-            </a>
-            <a>
-               <div className="homepage_brand_wrapper_bottom_image">
-                  <img className="homepage_brand_wrapper_bottom_image_logo" src={saint_laurent} alt='' />
-               </div>
-            </a>
-            <a>
-               <div className="homepage_brand_wrapper_bottom_image">
-                  <img className="homepage_brand_wrapper_bottom_image_logo" src={givenchy} alt='' />
-               </div>
-            </a>
+            <div className="premiumbrand_wrapper_grid">
+               <article className="gucci"><NavLink><img src={gucci} alt="" /></NavLink></article>
+               <article className="prada"><NavLink><img src={prada} alt="" /></NavLink></article>
+               <article className="lv"><NavLink><img src={lv} alt="" /></NavLink></article>
+               <article className="bv"><NavLink><img src={bv} alt="" ></img></NavLink></article>
+               <article className="marc_jacobs"><NavLink><img src={marc_jacobs} alt="" /></NavLink></article>
+               <article className="bulgary"><NavLink><img src={bvlgari} alt="" /></NavLink></article>
+               <article className="versace"><NavLink><img src={versace} alt="" /></NavLink></article>
+               <article className="saint_laurent"><NavLink><img src={saint_laurent} alt="" /></NavLink></article>
+               <article className="givenchy"><NavLink><img src={givenchy} alt="" /></NavLink></article>
+
+            </div>
          </div>
       </>
    );
 };
 
-export default homepage_card;
+export default PremiumBrandGrid;
