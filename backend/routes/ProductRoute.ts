@@ -1,7 +1,7 @@
 import express from "express";
 import {
-  getProducts,
-  getProductsByName,
+   getProducts,
+   getProductsByName,
 } from "../controllers/ProductController";
 
 const router = express.Router();

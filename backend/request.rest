@@ -1,6 +1,36 @@
+
+
+# POST http://localhost:5000/register
+# Content-Type: application/json
+
+# {
+#   "USERNAME": "fariz",
+#   "PASSWORD": "123",
+#   "FIRST_NAME": "John",
+#   "LAST_NAME": "Doe",
+#   "EMAIL": "fariz@example.com",
+#   "PHONE_NUMBER": "1234567890",
+#   "CREATED_AT": "2023-04-08T12:00:00Z"
+# }
+
 POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "USERNAME":"Fariz"
+    "USERNAME": "fariz",
+    "PASSWORD": "123"
 }
+
+# POST http://localhost:5000/cart/edit
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7IlVTRVJfSUQiOjIsIlVTRVJOQU1FIjoiZmFyaXoiLCJQQVNTV09SRCI6IiQyYiQwOCRNMXVXdnA0UWQwLjdnUnVRRUtQTFRPVTQzdWlWQTRZZE9CRDU3N21UQWxBZU54TG9qQ1FVaSIsIkZJUlNUX05BTUUiOiJKb2huIiwiTEFTVF9OQU1FIjoiRG9lIiwiRU1BSUwiOiJmYXJpekBleGFtcGxlLmNvbSIsIkdFTkRFUiI6bnVsbCwiUEhPTkVfTlVNQkVSIjoiMTIzNDU2Nzg5MCIsIkNSRUFURURfQVQiOiIyMDIzLTA0LTA4VDEyOjAwOjAwLjAwMFoifSwiZXhwIjoxNjgxMjkzNjQ4LCJpYXQiOjE2ODEyOTMwNDh9.O34DclJmcjYAbyDUG69jWYmVNTMeh8xF1LErXTtCUFU
+# Content-Type: application/json
+
+# {
+#     "USER_ID": 2,
+#     "PRODUCT_ID": 2,
+#     "COLOR": "green",
+#     "QUANTITY": 69
+# }
+
+# GET http://localhost:5000/products
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7IlVTRVJfSUQiOjIsIlVTRVJOQU1FIjoiZmFyaXoiLCJQQVNTV09SRCI6IiQyYiQwOCRNMXVXdnA0UWQwLjdnUnVRRUtQTFRPVTQzdWlWQTRZZE9CRDU3N21UQWxBZU54TG9qQ1FVaSIsIkZJUlNUX05BTUUiOiJKb2huIiwiTEFTVF9OQU1FIjoiRG9lIiwiRU1BSUwiOiJmYXJpekBleGFtcGxlLmNvbSIsIkdFTkRFUiI6bnVsbCwiUEhPTkVfTlVNQkVSIjoiMTIzNDU2Nzg5MCIsIkNSRUFURURfQVQiOiIyMDIzLTA0LTA4VDEyOjAwOjAwLjAwMFoifSwiZXhwIjoxNjgxMjMwNTk2LCJpYXQiOjE2ODEyMjk5OTZ9.jZuzBw70RfjKO5yctbq9cjfrxkbC-_MuQeJNontHEfw
