@@ -2,11 +2,6 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './footer.scss'
 
-import Insta from '../../assets/svg/Group_8555-insta.svg';
-import Whatsapp from '../../assets/svg/Vectorwhatsapp.svg';
-import Linkedin from '../../assets/svg/Vector-16-linkedin.svg';
-import Facebook from '../../assets/svg/Vector-11-facebook.svg';
-import Google from '../../assets/svg/Vector-3-google.svg';
 
 
 const footer = () => {
