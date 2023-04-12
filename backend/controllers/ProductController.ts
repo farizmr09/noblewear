@@ -3,6 +3,7 @@ import { Prisma, PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
+// query
 export const getProducts = async (
   req: express.Request,
   res: express.Response
@@ -15,6 +16,7 @@ export const getProducts = async (
   }
 };
 
+// query
 export const getProductsByName = async (
   req: express.Request,
   res: express.Response
