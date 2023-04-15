@@ -12,20 +12,20 @@ const header_homepage = () => {
       <>
          <header className='header_homepage_wrapper'>
             <nav className='header_homepage_wrapper_nav'>
-               <NavLink>
+               <NavLink to='/product-list'>
                   <span>Men</span>
                </NavLink>
-               <NavLink>
+               <NavLink to='/product-list'>
                   <span>Woman</span>
                </NavLink>
                <p>
                   <span className='left'>By IzBr</span>
                   <span className='right'>other.</span>
                </p>
-               <NavLink>
+               <NavLink to='/product-list'>
                   <span>Kids</span>
                </NavLink>
-               <NavLink>
+               <NavLink to='/product-list'>
                   <span>Accessories</span>
                </NavLink>
             </nav>

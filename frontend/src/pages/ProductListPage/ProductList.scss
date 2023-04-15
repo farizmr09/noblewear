@@ -126,5 +126,25 @@
          grid-auto-rows: auto;
          gap: 16px;
       }
+
+      .pagination {
+         display: flex;
+         justify-content: center;
+         margin-top: 96px;
+
+         &_prev {
+            margin-right: 8px;
+            padding: 12px;
+         }
+
+         &_num {
+            padding: 12px;
+         }
+
+         &_next {
+            margin-left: 8px;
+            padding: 12px;
+         }
+      }
    }
 }

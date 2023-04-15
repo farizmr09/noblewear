@@ -8,6 +8,7 @@
    padding-top: 40px;
    padding-bottom: 40px;
    padding-inline: calc((100% - 1140px) / 2);
+   z-index: 9999;
    background-color: white;
 
    &_nav {

@@ -9,7 +9,11 @@
       flex-grow: 1;
       flex-direction: column;
       h2 {
-         margin-block: auto;
+         margin-block: 10px;
+      }
+
+      &_brand {
+         margin-bottom: auto;
       }
 
       &_price {

@@ -10,7 +10,7 @@ const product_card = (props) => {
             <img src={Productimg} alt="" />
             <div className='product_card_desc'>
                 <h2>{props.title}</h2>
-                <p>Zara</p>
+                <p className='product_card_desc_brand'>Zara</p>
 
                 <div className="product_card_desc_price">
                     <p>{`Rp ${props.price}`}</p>
