@@ -31,6 +31,7 @@ services:
       environment:
          - MYSQL_USERNAME=root
          - MYSQL_ROOT_PASSWORD=123
+         # - YSQL_ROOT_HOST: 172.18.0.4
 
    phpmyadmin:
       image: phpmyadmin/phpmyadmin
