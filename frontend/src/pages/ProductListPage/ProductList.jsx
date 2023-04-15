@@ -20,6 +20,7 @@ const ProductList = () => {
     const [pattern, setPattern] = useState('');
     const [minPrice, setMinPrice] = useState('');
     const [maxPrice, setMaxPrice] = useState('');
+    const [Loaded, setLoaded] = useState(false);
 
     // Banner Slider Settings
 
@@ -57,20 +58,30 @@ const ProductList = () => {
     const fetchProducts = () => {
         fetch(url)
             .then((res) => res.json())
-            .then((data) => setProducts(data))
-            .catch((error) => console.log(error));
+            .then((data) => {
+                setLoaded(true);
+                setProducts(data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     };
 
     useEffect(() => {
         fetchProducts();
-        console.log(products)
     }, [pattern, minPrice, maxPrice]);
+
+    useEffect(() => {
+        if (products.length > 0) {
+            setLoaded(true);
+        } else {
+            setLoaded(false);
+        }
+    }, [products]);
 
     return (
         <>
             <Header />
-
-
             <div className='productList_banner'>
                 <div className="productList_banner_content">
                     <h1>Unleash Your Style</h1>
@@ -99,10 +110,12 @@ const ProductList = () => {
                     </div>
 
                     <div className='catalog'>
-                        {products.map(product => (
-                            <ProductCard title={product.BRAND} price={product.PRICE} />
-                        ))}
-
+                        {console.log(`second ${Loaded}`)}
+                        {Loaded && products.length > 0 && (
+                            products.map(product => (
+                                <ProductCard title={product.BRAND} price={product.PRICE} />
+                            ))
+                        )}
                     </div>
                 </div>
 
