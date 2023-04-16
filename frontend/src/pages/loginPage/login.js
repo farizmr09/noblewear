@@ -76,8 +76,9 @@ export default function login() {
 const SignUpPageRootRootRoot = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center; // center content vertically
-  padding: 0px 5%; // use percentage instead of fixed value
+  justify-content: center; 
+  align-items: center;
+  padding: 0px 5%; 
   box-sizing: border-box;
   background-color: #ffffff;
   overflow: hidden;

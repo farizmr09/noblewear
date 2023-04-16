@@ -98,8 +98,6 @@ const homepage = () => {
          </div>
 
          <div className="homepage_wrapper_latest">
-
-
             <column className='homepage_wrapper_latest_leftcol'>
                <article className='homepage_wrapper_latest_leftcol_article'>
                   <NavLink>
