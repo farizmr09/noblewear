@@ -7,6 +7,7 @@ import Login from "./pages/loginPage/login"
 import Product1 from "./pages/productDetailPage/product1"
 import Product2 from "./pages/productDetailPage/product2"
 import Product3 from "./pages/productDetailPage/product3"
+import ShoppingCart from "./pages/checkoutPage/checkout"
 import Footer from "./layout/footer/footer";
 
 
@@ -23,6 +24,7 @@ function App() {
                <Route path='/product2' element={<Product2 />} />
                <Route path='/product3' element={<Product3 />} />
                <Route path='/productlist' element={<ProductList />} />
+               <Route path='/checkout' element={<ShoppingCart />} />
             </Routes>
             <Footer />
          </Router>
