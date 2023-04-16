@@ -13,6 +13,9 @@ import ProductCard from '../../components/product_card/product_card';
 
 // IMAGE IMPORT
 import banner1 from '../../assets/images/productlistbanner.webp';
+import Slide2 from '../../assets/images/slider2.webp';
+import Slide3 from '../../assets/images/slider3.webp';
+import Slide4 from '../../assets/images/slider4.webp';
 
 const ProductList = () => {
     // STATE INITIALIZATION
@@ -23,6 +26,7 @@ const ProductList = () => {
     const [currentPage, setCurrentPage] = useState('');
     const [Loaded, setLoaded] = useState(false);
     const [totalPages, setTotalPages] = useState(0);
+    const [productCount, setProductCount] = useState(0);
 
     const maxPageButtons = 10;
 
@@ -72,6 +76,7 @@ const ProductList = () => {
                 setLoaded(true);
                 setProducts(data.data);
                 setTotalPages(data.totalPages);
+                setProductCount(data.totalProduct);
             })
             .catch((error) => {
                 console.log(error);
@@ -119,7 +124,7 @@ const ProductList = () => {
 
         for (let i = startPage; i <= endPage; i++) {
             pageButtons.push(
-                <button className='pagination_num' key={i} onClick={() => handlePageClick(i)} isActive={currentPage == i} >
+                <button className={`pagination_num ${currentPage == i ? 'active' : ''}`} key={i} onClick={() => handlePageClick(i)} >
                     {i}
                 </button>
             );
@@ -127,6 +132,7 @@ const ProductList = () => {
 
         return pageButtons;
     };
+
 
 
 
@@ -142,22 +148,29 @@ const ProductList = () => {
                     </div>
                     <Slider {...settings} className='productList_banner_content_sliderbg'>
                         <img src={banner1} alt="" />
-                        <img src={banner1} alt="" />
-                        <img src={banner1} alt="" />
-                        <img src={banner1} alt="" />
-                        <img src={banner1} alt="" />
+                        <img src={Slide2} alt="" />
+                        <img src={Slide3} alt="" />
+                        <img src={Slide4} alt="" />
                     </Slider>
                 </div>
             </div>
 
             <div className="productList_productList">
                 <div className='productList_productList_filter'>
-
+                    <ul className="productList_productList_filter_sorting">
+                        <li>Showing <span>{productCount}</span> Products</li>
+                    </ul>
                 </div>
+
                 <div className='productList_productList_products'>
                     <div className='search'>
-                        <input type="text" name="" id="" />
-                        <button >Submit</button>
+                        <input type="text" name="" id="" value={pattern} onChange={(e) => { setPattern(e.currentTarget.value) }} />
+                        <button onClick={() => setPattern(pattern)}>
+                            <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.125 12.7348C1.12419 7.37626 4.90877 2.76337 10.1642 1.71724C15.4196 0.671102 20.6822 3.48309 22.7335 8.43347C24.7847 13.3839 23.0534 19.0939 18.5983 22.0714C14.1431 25.049 8.20509 24.4648 4.41562 20.6762C2.30894 18.5702 1.12525 15.7136 1.125 12.7348Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M20.3003 20.678L26.7188 27.0965" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
                     </div>
 
                     <div className='catalog'>
@@ -171,15 +184,25 @@ const ProductList = () => {
                         )}
                     </div>
 
-                    <div className="pagination">
-                        <button disabled={currentPage === 1} onClick={handlePagePrevClick} className='pagination_prev'>
-                            Prev
-                        </button>
-                        {renderPageButtons()}
-                        <button disabled={currentPage === totalPages} onClick={handlePageNextClick} className='pagination_next'>
-                            Next
-                        </button>
-                    </div>
+
+                    {totalPages > 1 && (
+                        <div className="pagination">
+                            <button disabled={currentPage === 1} onClick={handlePagePrevClick} className='pagination_prev'>
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1L1 6L6 11" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+
+                            </button>
+                            {renderPageButtons()}
+                            <button disabled={currentPage === totalPages} onClick={handlePageNextClick} className='pagination_next'>
+                                <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L6 6L1 11" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+
+                            </button>
+                        </div>
+                    )}
+
                 </div>
 
             </div>

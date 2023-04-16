@@ -28,6 +28,7 @@ export const getProductsByName = async (
             COLOR: color,
          },
       });
+      const totalProduct = count;
       const totalPages = Math.ceil(count / perPage);
       const response = await prisma.PRODUCT_DATA.findMany({
          skip: !isNaN(page) ? page * perPage : 0,
@@ -44,7 +45,7 @@ export const getProductsByName = async (
             COLOR: color,
          },
       });
-      res.status(200).json({ data: response, totalPages });
+      res.status(200).json({ data: response, totalPages, totalProduct });
    } catch (error: any) {
       res.status(500).json({ msg: error.message });
    }
