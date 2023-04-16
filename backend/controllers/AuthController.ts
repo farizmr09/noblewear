@@ -1,6 +1,6 @@
 import express from "express";
 import { Prisma, PrismaClient } from "@prisma/client";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwtAuth from "../utils/jwtAuth";
 import createHttpError from "http-errors";
 

@@ -1,0 +1,92 @@
+.header_general_wrapper {
+   position: sticky;
+   top: 0px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-content: center;
+   padding-top: 40px;
+   padding-bottom: 40px;
+   padding-inline: calc((100% - 1140px) / 2);
+   z-index: 9999;
+   background-color: white;
+
+   &_nav {
+      margin-inline: auto;
+      display: flex;
+      column-gap: 60px;
+
+      p {
+         font-family: "Antipasto-regular", "sans-serif";
+         font-size: 33px;
+
+         .left {
+            color: #535353;
+         }
+
+         .right {
+            margin-left: 1px;
+            color: #535353;
+         }
+
+         &.title {
+            font-family: "Brand" !important;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 52px;
+            text-align: center;
+
+            color: #535353;
+         }
+      }
+
+      a {
+         font-family: "Antipasto-regular", "sans-serif";
+         font-size: 20px;
+         display: flex;
+         align-content: center;
+         font-weight: 600px;
+         transition: 0.3s ease-in-out color;
+
+         span {
+            margin-block: auto;
+         }
+
+         &:nth-child(1),
+         &:nth-child(2) {
+            color: #535353;
+
+            &:hover {
+               color: #535353;
+            }
+         }
+
+         &:nth-child(4),
+         &:nth-child(5) {
+            color: #535353;
+
+            &:hover {
+               color: #535353;
+            }
+         }
+      }
+   }
+
+   &_sidemenu {
+      margin-top: -35px;
+      margin-left: auto;
+      margin-right: 0px;
+
+      display: flex;
+      column-gap: 20px;
+
+      a {
+         display: flex;
+
+         img {
+            margin-block: auto;
+         }
+      }
+   }
+}
