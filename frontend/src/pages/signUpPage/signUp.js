@@ -165,7 +165,7 @@ const DesktopSignUpPageRootRootRoot = styled.div`
   overflow: hidden;
 `;
 const Image1 = styled.div`
-  width: 950px;
+  width: 795px;
   height: 1051px;
   left: 939.9580078125px;
   top: 0px;
