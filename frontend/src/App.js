@@ -9,6 +9,11 @@ import Product2 from "./pages/productDetailPage/product2"
 import Product3 from "./pages/productDetailPage/product3"
 import ShoppingCart from "./pages/checkoutPage/checkout"
 import Confirmation from "./pages/confirmationPage/confirmation"
+import Account from "./pages/accountPage/account"
+import Address from "./pages/accountPage/address"
+import Payment from "./pages/accountPage/payment"
+import Wishlist from "./pages/accountPage/wishlist"
+import History from "./pages/accountPage/history"
 import Footer from "./layout/footer/footer";
 
 
@@ -27,6 +32,11 @@ function App() {
                <Route path='/productlist' element={<ProductList />} />
                <Route path='/checkout' element={<ShoppingCart />} />
                <Route path='/confirmation' element={<Confirmation />} />
+               <Route path='/account' element={<Account />} />
+               <Route path='/address' element={<Address />} />
+               <Route path='/payment' element={<Payment />} />
+               <Route path='/wishlist' element={<Wishlist />} />
+               <Route path='/history' element={<History />} />
             </Routes>
             <Footer />
          </Router>
