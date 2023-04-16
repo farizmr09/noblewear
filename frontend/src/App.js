@@ -1,7 +1,7 @@
 import "./App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "./pages/homepage/homepage";
-import ProductList from "./pages/ProductListPage/ProductList";
+import ProductList from "./pages/productList/productList";
 import SignUp from "./pages/signUpPage/signUp"
 import Login from "./pages/loginPage/login"
 import Product1 from "./pages/productDetailPage/product1"
@@ -22,6 +22,7 @@ function App() {
                <Route path='/product1' element={<Product1 />} />
                <Route path='/product2' element={<Product2 />} />
                <Route path='/product3' element={<Product3 />} />
+               <Route path='/productlist' element={<ProductList />} />
             </Routes>
             <Footer />
          </Router>
